@@ -1,0 +1,85 @@
+
+
+<section class="card">
+  <div class="eyebrow">Fast - Clean - Practical</div>
+  <h1>Unit Converter</h1>
+  <p class="subtitle">Pick a category, enter a value, and convert it in one step.</p>
+
+  <div class="options-group" role="tablist" aria-label="Converter types">
+    <input type="radio" name="type" id="weight-option" value="weight" checked onchange="switchForm(this.value)">
+    <label for="weight-option">Weight</label>
+
+    <input type="radio" name="type" id="length-option" value="length" onchange="switchForm(this.value)">
+    <label for="length-option">Length</label>
+
+    <input type="radio" name="type" id="temperature-option" value="temperature" onchange="switchForm(this.value)">
+    <label for="temperature-option">Temperature</label>
+  </div>
+
+  <form id="weight-form" class="simple-form" action="/weight" method="POST">
+    <div class="field">
+      <label for="weight-value">Value</label>
+      <input id="weight-value" name="value" type="number" step="any" placeholder="Enter weight" required>
+    </div>
+
+    <div class="field">
+      <label for="weight-from">From Unit</label>
+      <select id="weight-from" name="from" onchange="updateToOptions(value, id)" required>
+        <option value="" disabled selected hidden>Choose unit...</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="weight-to">To Unit</label>
+      <select id="weight-to" name="to" required>
+      </select>
+    </div>
+
+
+    <button type="submit">Convert Weight</button>
+  </form>
+
+  <form id="length-form" class="simple-form" action="/length" method="POST" style="display: none;">
+    <div class="field">
+      <label for="length-value">Value</label>
+      <input id="length-value" name="value" type="number" step="any" placeholder="Enter length" required>
+    </div>
+
+    <div class="field">
+      <label for="length-from">From Unit</label>
+      <select id="length-from" name="from" onchange="updateToOptions(value, id)" required>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="length-to">To Unit</label>
+      <select id="length-to" name="to" required>
+        
+      </select>
+    </div>
+
+    <button type="submit">Convert Length</button>
+  </form>
+
+  <form id="temperature-form" class="simple-form" action="/temperature" method="POST" style="display: none;">
+    <div class="field">
+      <label for="temperature-value">Value</label>
+      <input id="temperature-value" name="value" type="number" step="any" placeholder="Enter temperature" required>
+    </div>
+
+    <div class="field">
+      <label for="temperature-from">From Unit</label>
+      <select id="temperature-from" name="from" onchange="updateToOptions(value, id)" required>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="temperature-to">To Unit</label>
+      <select id="temperature-to" name="to" required>
+        
+      </select>
+    </div>
+
+    <button type="submit">Convert Temperature</button>
+  </form>
+</section>

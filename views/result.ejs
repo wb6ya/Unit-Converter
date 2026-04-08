@@ -1,0 +1,24 @@
+<section class="card result-card">
+  <div class="eyebrow">Conversion Result</div>
+  <h1><%= title || 'Result' %></h1>
+  <p class="subtitle">Your conversion has been prepared below.</p>
+
+  <div class="result-panel">
+    <div class="result-label">Converted Value</div>
+    <div class="result-value"><%= result %></div>
+    <div class="result-units"><%= fromUnit %> to <%= toUnit %></div>
+  </div>
+
+  <div class="result-meta">
+    <div class="result-meta-item">
+      <span class="meta-title">From</span>
+      <strong><%= fromUnit %></strong>
+    </div>
+    <div class="result-meta-item">
+      <span class="meta-title">To</span>
+      <strong><%= toUnit %></strong>
+    </div>
+  </div>
+
+  <a class="back-link" href="/">Convert Another Value</a>
+</section>
